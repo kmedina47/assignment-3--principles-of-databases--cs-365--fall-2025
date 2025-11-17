@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS Passwords (
 
 SET block_encryption_mode = 'aes-256-cbc';
 SET @key_str = UNHEX(SHA2('365passwordKey', 512));
--- Fixed IV ensures cross-platform compatibility
 SET @init_vector = UNHEX('00000000000000000000000000000000');
 
 INSERT INTO Users (firstName, lastName, email, userName) VALUES
